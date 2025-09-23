@@ -6,12 +6,24 @@
   <title>AD Missão - Agudos</title>
   <style>
     body {
+        position: relative;
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #000;
       color: #fff;
-    }
-
+      background-image: url(banner_adorando.jpg);
+      background-image: -webkit-gradient( rgba(0, 0, 0, 0.5));
+      background-size:cover;
+      background-repeat: no-repeat;
+      
+}
+.transparencia{
+    background: #000000bd;
+    width: 100%;
+    height: 100vh;
+    position:absolute;
+    z-index:-1;
+}
     header {
       background-color: #4e2e1e; /* marrom */
       padding:1rem; /* altura do topo */
@@ -68,12 +80,34 @@
       width:40%;
       max-width: 100%;
       border-radius: 5px;
+      margin-bottom: 3rem;
     }
+
+    span{
+
+        width:100%;
+        margin-left:35%
+    }
+
+    span a{
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #c48a6d;
+        font-weight: bold;
+        font-size: 1.6rem;
+    }
+    span a:hover{
+        color:#a0694d;
+    }
+    span a:active{
+        color:#4e2e1e;
+    }
+
 
     .bottom-box {
       background-color: #1a1a1a;
-      padding: 2rem 0 2rem 7rem;
-      margin:10rem 0 0 0 ;
+      padding: 1rem 0 2rem 7rem;
+      margin:4rem 0 0 0 ;
       max-width: 25rem;
       font-weight: bold;
       font-size:1.5rem;
@@ -85,12 +119,13 @@
   </style>
 </head>
 <body>
-
+  <div class="transparencia"></div>  
   <header>
     <img src="https://github.com/bryansilvacm/AD-MISSAO/blob/main/logo.png?raw=true" alt="Logo AD Missão" class="logo" />
     <nav>
+      <a href="index.html">Início</a>
       <a href="historia.html">História</a>
-      <a href="#">Congregações</a>
+      <a href="congregacoes.html"">Congregações</a>
       <a href="#">Visão e Valores</a>
       <a href="#">Área de Membros</a>
     </nav>
@@ -100,9 +135,12 @@
     IGREJA EVANGÉLICA ASSEMBLEIA DE DEUS MINISTÉRIO MISSÃO - AGUDOS
   </div>
 
+
   <div class="main-images">
     <img src="https://github.com/bryansilvacm/AD-MISSAO/blob/main/banner.png?raw=true" alt="Imagem de culto" />
   </div>
+
+  <span><a href="congregacoes.html">Visite uma de nossas Congregações</a></span>
 
   <div class="bottom-box">
     CRISTO EM BREVE VEM,<br />
