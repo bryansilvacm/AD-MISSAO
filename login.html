@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AD Missão - Área de Membros</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10rem;
+    }
+
+
+     header {
+      padding:1rem; /* altura do topo */
+      display: flex;
+      justify-content: center; /* centraliza horizontalmente */
+      align-items: center;     /* alinha verticalmente */
+      gap: 20rem; /* espaço entre logo e menu */
+      flex-wrap: wrap;
+      height:7rem;
+    }
+
+    .logo {
+      width:9rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      background-color: #000;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #4b2e1c;
+    }
+    
+    
+    
+    
+    /* Formulário */
+    .login-container {
+      background-color: #4b2e1c; /* marrom */
+      padding: 40px;
+      padding-bottom: 5rem;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      width: 25%;
+      height: 60%;
+    }
+
+    .login-container img {
+      width: 9rem;
+      margin-bottom: 20px;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding:0.8rem;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .login-container button {
+      margin-top: 20px;
+      padding: 10px 0;
+      width: 100%;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .login-container button:hover {
+      background-color: #333;
+    }
+
+    .login-container a {
+      margin-top: 15px;
+      font-size:0.9rem;
+      color: #ddd;
+    }
+
+    .login-container a:hover {
+      color: #fff;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="https://github.com/bryansilvacm/AD-MISSAO/blob/main/logo.png?raw=true" alt="Logo AD Missão" class="logo" />
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="historia.html">História</a>
+      <a href="congregacoes.html">Congregações</a>
+      <a href="visaoevalores.html">Visão e Valores</a>
+      <a href="login.html">Área de Membros</a>
+    </nav>
+  </header>
+
+  <div class="login-container">
+    <img src="https://github.com/bryansilvacm/AD-MISSAO/blob/main/logo.png?raw=true" alt="Logo AD Missão">
+    <p>Faça Login</p>
+    <input type="text" id="usuario" placeholder="Digite seu usuário">
+    <input type="password" id="senha" placeholder="Digite sua senha">
+    
+    <button>ENTRAR</button>
+    
+    <a href="#">esqueci a senha</a>
+  </div>
+
+</body>
+</html>

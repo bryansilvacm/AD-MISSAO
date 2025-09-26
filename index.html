@@ -3,47 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AD Missão - Agudos</title>
+  <title>AD Missão - Início</title>
   <style>
+    html, body{
+      margin:0;
+      padding: 0;
+      height: 100%;
+    }
     body {
-        position: relative;
+      position: relative;
+      min-height: 100vh;
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #000;
       color: #fff;
-      background-image: url(banner_adorando.jpg);
-      background-image: -webkit-gradient( rgba(0, 0, 0, 0.5));
-      background-size:cover;
+      background-image: url("/img/banner_adorando.jpg");
+      background-size: cover;
       background-repeat: no-repeat;
       
-}
-.transparencia{
-    background: #000000bd;
-    width: 100%;
-    height: 100vh;
-    position:absolute;
-    z-index:-1;
-}
+    }
+
+    .transparencia {
+      background: #000000cb;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: -1;
+    }
+
     header {
-      background-color: #4e2e1e; /* marrom */
-      padding:1rem; /* altura do topo */
+      background-color: #4e2e1e; 
+      padding: 1rem;
       display: flex;
-      justify-content: center; /* centraliza horizontalmente */
-      align-items: center;     /* alinha verticalmente */
-      gap: 20rem; /* espaço entre logo e menu */
+      justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
-      height:7rem;
     }
 
     .logo {
-      width:9rem;
+      width: 9rem;
     }
 
     nav {
       display: flex;
-      gap: 5rem;
+      gap: 1rem;
       flex-wrap: wrap;
       justify-content: center;
+      margin-right: 3rem;
     }
 
     nav a {
@@ -53,7 +59,7 @@
       padding: 10px 15px;
       border-radius: 5px;
       font-weight: bold;
-      font-size: 14px;
+      font-size: 1.2rem;
       transition: background 0.3s;
     }
 
@@ -61,9 +67,25 @@
       background-color: #333;
     }
 
+    /* Botão hamburguer (oculto em telas grandes) */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger div {
+      width: 30px;
+      height: 4px;
+      background: #fff;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
     .title {
       text-align: center;
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: bold;
       margin: 30px 20px;
       text-transform: uppercase;
@@ -77,43 +99,101 @@
     }
 
     .main-images img {
-      width:40%;
-      max-width: 100%;
+      width: 90%;
+      max-width: 800px;
       border-radius: 5px;
       margin-bottom: 3rem;
     }
 
-    span{
+    .congragacoes-container{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-        width:100%;
-        margin-left:35%
-    }
-
-    span a{
-        text-decoration: none;
-        text-transform: uppercase;
-        color: #c48a6d;
-        font-weight: bold;
-        font-size: 1.6rem;
-    }
-    span a:hover{
-        color:#a0694d;
-    }
-    span a:active{
-        color:#4e2e1e;
     }
 
+    .congragacoes-container a {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #c48a6d;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+   .congragacoes-container a:hover {
+    color: #9e6a50;
+  }
 
     .bottom-box {
       background-color: #1a1a1a;
-      padding: 1rem 0 2rem 7rem;
-      margin:4rem 0 0 0 ;
+      padding: 1rem 0 1rem 7rem;
+      margin: 4rem 0 0 0;
       max-width: 25rem;
       font-weight: bold;
-      font-size:1.5rem;
+      font-size: 1.5rem;
       text-transform: uppercase;
+      text-align: left;
+    }
+    
+
+    /* Responsividade */
+    @media (max-width: 1000px) {
+      .title{
+        font-size: 1.4rem;
+      }
+      .congragacoes-container a{
+        font-size: 1.2rem;
+      }
+      .bottom-box{
+        font-size: 1.2rem;
+      }
+      header{
+        flex-direction: column;
+      }
+      .logo{
+        margin:0;
+        width: 8rem;
+      }
+      nav a{
+        font-size: 1rem;
+      }
     }
 
+    
+    /* Responsividade */
+    @media (max-width: 768px) {
+      header{
+        flex-direction: row;
+      }
+      nav {
+        display: none; /* esconde menu */
+        position: absolute;
+        top: 90px;
+        right:-35px;
+        flex-direction: column;
+        width: 30%;
+        background: #1a1a1a;
+        padding: 1rem 0;
+        z-index: 2;
+      }
+
+      nav.active {
+        display: flex; /* mostra quando clica */
+        
+      }
+
+      .hamburger {
+        display: flex; /* mostra o botão */
+      }
+
+      nav a {
+        font-size: 1rem;
+        padding: 10px;
+        text-align: center;
+        width: 70%;
+        margin: auto;
+      }
+    }
 
 
   </style>
@@ -122,12 +202,20 @@
   <div class="transparencia"></div>  
   <header>
     <img src="https://github.com/bryansilvacm/AD-MISSAO/blob/main/logo.png?raw=true" alt="Logo AD Missão" class="logo" />
-    <nav>
+
+    <!-- Botão hamburguer -->
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <nav id="nav">
       <a href="index.html">Início</a>
       <a href="historia.html">História</a>
-      <a href="congregacoes.html"">Congregações</a>
-      <a href="#">Visão e Valores</a>
-      <a href="#">Área de Membros</a>
+      <a href="congregacoes.html">Congregações</a>
+      <a href="visaoevalores.html">Visão e Valores</a>
+      <a href="login.html">Área de Membros</a>
     </nav>
   </header>
 
@@ -135,12 +223,11 @@
     IGREJA EVANGÉLICA ASSEMBLEIA DE DEUS MINISTÉRIO MISSÃO - AGUDOS
   </div>
 
-
   <div class="main-images">
     <img src="https://github.com/bryansilvacm/AD-MISSAO/blob/main/banner.png?raw=true" alt="Imagem de culto" />
   </div>
 
-  <span><a href="congregacoes.html">Visite uma de nossas Congregações</a></span>
+  <div class="congragacoes-container"><a href="congregacoes.html">Visite uma de nossas Congregações</a></div>
 
   <div class="bottom-box">
     CRISTO EM BREVE VEM,<br />
@@ -148,5 +235,21 @@
     AO SENHOR
   </div>
 
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const nav = document.getElementById("nav");
+    const transparencia = document.querySelector(".transparencia");
+
+
+    hamburger.addEventListener("click", () => {
+      nav.classList.toggle("active");
+
+      if(nav.classList.contains("active") ){
+        transparencia.style.zIndex="1";
+      }else{
+        transparencia.style.zIndex = "-1"
+      }
+    });
+  </script>
 </body>
 </html>
